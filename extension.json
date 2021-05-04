@@ -1,0 +1,16 @@
+{
+  "code": "danielang.areaselector",
+  "name": "Area Selector",
+  "description": "This extension allows your customers to select the area where thy want to order from.",
+  "version": "v1.0.0",
+  "author": "Daniel Lang",
+  "icon": {
+    "class": "fa fa-object-group",
+    "backgroundColor": "#CD4341",
+    "color": "#fff"
+  },
+  "homepage": "https://tastyigniter.com/marketplace/item/danielang-areaselector",
+  "require": {
+    "igniter.local": "*"
+  }
+}
