@@ -1,7 +1,7 @@
 +function ($) {
     "use strict"
 
-    $(document).on('click', '[data-control="areaselector-dropdown"]', function (oEvent) {
+    $(document).on('click', '[data-control="selector-dropdown"]', function (oEvent) {
         var oTarget = oEvent.target;
         var vAreaId = oTarget.dataset.areaId;
 

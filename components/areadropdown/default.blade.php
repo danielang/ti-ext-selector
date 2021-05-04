@@ -1,15 +1,14 @@
-<div class="area-selector">
+<div class="selector">
     <form
         method="POST"
         role="form"
         data-request="{{ $selectAreaEventHandler }}"
-        data-control="areaselector-dropdown"
+        data-control="selector-dropdown"
     >
         <div class="dropdown">
             <button
                 class="btn btn-light btn-block dropdown-toggle text-truncate"
                 type="button"
-                id="areaPicker"
                 data-toggle="dropdown"
                 data-boundary="scrollParent"
                 aria-haspopup="true"
@@ -17,7 +16,7 @@
             >
                 <i class="fa fa-map-marker"></i>&nbsp;&nbsp;
                 <b>
-                    {{ $showSelection ? $current->name : lang('danielang.areaselector::default.dropdown_component_choose_action') }}
+                    {{ $showSelection ? $current->name : lang('danielang.selector::default.area_dropdown_component_choose_action') }}
                 </b>
             </button>
 

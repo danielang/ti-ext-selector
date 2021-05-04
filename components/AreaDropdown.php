@@ -1,12 +1,12 @@
 <?php
 
-namespace Danielang\AreaSelector\Components;
+namespace Danielang\Selector\Components;
 
 use Redirect;
 use ApplicationException;
 use Igniter\Local\Facades\Location;
 
-class Dropdown extends \System\Classes\BaseComponent
+class AreaDropdown extends \System\Classes\BaseComponent
 {
     use \Igniter\Local\Traits\SearchesNearby;
     use \Main\Traits\UsesPage;
@@ -16,15 +16,15 @@ class Dropdown extends \System\Classes\BaseComponent
         return [
             'showSelection' => [
                 'type' => 'switch',
-                'label' => 'lang:danielang.areaselector::default.dropdown_component_properties_show_selection',
-                'comment' => 'lang:danielang.areaselector::default.dropdown_component_properties_show_selection_comment',
+                'label' => 'lang:danielang.selector::default.area_dropdown_component_properties_show_selection',
+                'comment' => 'lang:danielang.selector::default.area_dropdown_component_properties_show_selection_comment',
                 'validationRule' => 'required|boolean',
                 'default' => true,
             ],
             'menusPage' => [
                 'type' => 'select',
-                'label' => 'lang:danielang.areaselector::default.dropdown_component_properties_redirect_to',
-                'comment' => 'lang:danielang.areaselector::default.dropdown_component_properties_redirect_to_comment',
+                'label' => 'lang:danielang.selector::default.area_dropdown_component_properties_redirect_to',
+                'comment' => 'lang:danielang.selector::default.area_dropdown_component_properties_redirect_to_comment',
                 'options' => [static::class, 'getThemePageOptions'],
                 'default' => 'local/menus',
                 'validationRule' => 'regex:/^[a-z0-9\-_\/]+$/i',
@@ -34,8 +34,8 @@ class Dropdown extends \System\Classes\BaseComponent
 
     public function onRun()
     {
-        $this->addJs('js/dropdown.js', 'dropdown-areaselector-js');
-        $this->addCss('css/dropdown.css', 'dropdown-areaselector-css');
+        $this->addJs('js/dropdown.js', 'dropdown-selector-js');
+        $this->addCss('css/dropdown.css', 'dropdown-selector-css');
 
 
         $this->prepareVars();
@@ -57,14 +57,14 @@ class Dropdown extends \System\Classes\BaseComponent
     {
         try {
             if (!strlen($areaId = post('area'))) {
-                throw new ApplicationException(lang('igniter.local::default.alert_no_search_query'));
+                throw new ApplicationException(lang('danielang.selector::default.alert_no_search_query'));
             }
 
             $deliveryAreas = Location::instance()->deliveryAreas();
             $deliveryArea = $deliveryAreas->get($areaId);
 
             if (!$deliveryArea) {
-                throw new ApplicationException(lang('igniter.local::default.alert_no_found_restaurant'));
+                throw new ApplicationException(lang('danielang.selector::default.area_dropdown_component_exception_delivery_area_not_found'));
             }
 
             Location::updateNearbyArea($deliveryArea);

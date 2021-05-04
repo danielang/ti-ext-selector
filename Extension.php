@@ -1,9 +1,9 @@
-<?php namespace Danielang\AreaSelector;
+<?php namespace Danielang\Selector;
 
 use System\Classes\BaseExtension;
 
 /**
- * AreaSelector Extension Information File
+ * Selector Extension Information File
  */
 class Extension extends BaseExtension
 {
@@ -35,10 +35,10 @@ class Extension extends BaseExtension
     public function registerComponents()
     {
         return [
-            'Danielang\AreaSelector\Components\Dropdown' => [
+            'Danielang\Selector\Components\AreaDropdown' => [
                 'code' => 'areaDropdown',
-                'name' => 'lang:danielang.areaselector::default.dropdown_component_title',
-                'description' => 'lang:danielang.areaselector::default.dropdown_component_desc',
+                'name' => 'lang:danielang.selector::default.area_dropdown_component_title',
+                'description' => 'lang:danielang.selector::default.area_dropdown_component_desc',
             ],
         ];
     }

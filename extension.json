@@ -1,6 +1,6 @@
 {
-  "code": "danielang.areaselector",
-  "name": "Area Selector",
+  "code": "danielang.selector",
+  "name": "Selector",
   "description": "This extension allows your customers to select the area where thy want to order from.",
   "version": "v1.0.0",
   "author": "Daniel Lang",

@@ -1,4 +1,4 @@
-# Area Selector
+# Selector
 An extension for single place resaurants.
 Let the customer select the delivery area from a dropdown list 
 
